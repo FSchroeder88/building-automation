@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12">
+        <h2>Heizungsanlage</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Temperatur</th>
+                    <th>Luftfeuchtigkeit</th>
+                    <th>Lüftung</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of rooms">
+                    <td>{{room.id}}</td>
+                    <td>{{room.name}}</td>
+                    <td>{{room.temperature}}&deg;C</td>
+                    <td>{{room.humidity}}%</td>
+                    <td>{{room.ventilation ? 'Ja' : 'Nein'}}</td>
+                    <td><button (click)="updateRoom(room)" class="btn btn-sm btn-primary">Aktualisieren</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
